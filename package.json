@@ -1,0 +1,53 @@
+{
+    "name":        "delivery-packer",
+    "homepage":    "https://github.com/msg-systems/delivery-packer",
+    "description": "JavaScript lightweight delivery artifact creator",
+    "version":     "0.1.0",
+    "license":     "MIT",
+    "author": {
+        "name":    "Jochen Hoertreiter",
+        "email":   "jochen.hoertreiter@googlemail.com",
+        "url":     "https://github.com/msg-systems"
+    },
+    "keywords": [
+        "delivery",
+        "artifact",
+        "packer",
+        "uglify",
+        "cssmin",
+        "gruntplugin"
+    ],
+    "repository": {
+        "type": "git",
+        "url":  "https://github.com/msg-systems/delivery-packer.git"
+    },
+    "bugs": {
+        "url":  "https://github.com/msg-systems/delivery-packer/issues"
+    },
+    "bin": {
+        "deliveryPacker": "./bin/deliveryPacker.js"
+    },
+    "main": "./lib/deliveryPacker.js",
+    "devDependencies": {
+        "grunt":                "0.4.5",
+        "grunt-cli":            "0.1.13",
+        "grunt-contrib-jshint": "1.0.0",
+        "grunt-contrib-clean":  "1.0.0"
+    },
+    "peerDependencies": {
+        "grunt":                ">=0.4.0"
+    },
+    "dependencies": {
+        "package":              "1.0.1",
+        "dashdash":             "1.13.0",
+        "colors":               "1.1.2",
+        "lodash":               "4.5.1",
+        "buildify":             "0.4.0",
+        "glob":                 "7.0.0",
+        "fs-extra":             "0.26.5",
+        "js-yaml":              "3.5.3"
+    },
+    "engines": {
+        "node":                 ">=0.10.0"
+    }
+}
