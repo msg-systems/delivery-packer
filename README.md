@@ -192,7 +192,9 @@ Registering a `delivery part` is necessary in order to use it in the delivery ar
 
 ### Delivery Part Registration
 
-Inside a `deliveryPart.yaml` the `register` attribute allows the specification of any alias name. That name should be unique in the delivery creation process. Within the defined alias name we can specify the connected `JS`, `CSS` and `ASSETS` files. Files are defined as a collection using the `-` in the yaml.  
+Inside a `deliveryPart.yaml` the `register` attribute allows the specification of any alias name. That name should be unique in the delivery creation process. Within the defined alias name we can specify the connected `JS` and `CSS` files. Files are defined as a collection using the `-` in the yaml.
+
+The `CSS` files can be simple strings or an object with `name` and `ASSETS` attribute. The `ASSETS` should be a list of assets used within the CSS file. Those assets will be copied to a folder equal to the registered alias name within the given asset output folder.  
 
 ### Example deliveryPart.yaml
 
@@ -200,14 +202,38 @@ The `delivery part` example registers the `font-awesome` alias and defines the s
 
 ```yaml
 register:
+  # register 'jquery' and direct to its JS file using simple string style
+  jquery:
+    JS:
+    - ../../node_modules/jquery/dist/jquery.js
+  # register 'bootstrap' and direct to all of its JS files using multipe strings
+  bootstrap:
+    JS:
+    - ../lib/bootstrap/js/affix.js
+    - ../lib/bootstrap/js/alert.js
+    - ../lib/bootstrap/js/button.js
+    - ../lib/bootstrap/js/carousel.js
+    - ../lib/bootstrap/js/collapse.js
+    - ../lib/bootstrap/js/dropdown.js
+    - ../lib/bootstrap/js/modal.js
+    - ../lib/bootstrap/js/tooltip.js
+    - ../lib/bootstrap/js/popover.js
+    - ../lib/bootstrap/js/scrollspy.js
+    - ../lib/bootstrap/js/tab.js
+    - ../lib/bootstrap/js/transition.js
+  # register 'normalize.css' and direct to its CSS file using simple string style 
+  normalize.css:
+    CSS:
+    - ../../node_modules/normalize.css/normalize.css
+  # register 'font-awesome' and direct to its CSS file - including its ASSETS - using object style 
   font-awesome:
     CSS:
-    - ../node_modules/font-awesome/css/font-awesome.css
-    ASSETS:
-    - ../node_modules/font-awesome/fonts/FontAwesome.otf
-    - ../node_modules/font-awesome/fonts/fontawesome-webfont.eot
-    - ../node_modules/font-awesome/fonts/fontawesome-webfont.svg
-    - ../node_modules/font-awesome/fonts/fontawesome-webfont.ttf
-    - ../node_modules/font-awesome/fonts/fontawesome-webfont.woff
-    - ../node_modules/font-awesome/fonts/fontawesome-webfont.woff2
+    - name: ../node_modules/font-awesome/css/font-awesome.css
+      ASSETS:
+      - ../node_modules/font-awesome/fonts/FontAwesome.otf
+      - ../node_modules/font-awesome/fonts/fontawesome-webfont.eot
+      - ../node_modules/font-awesome/fonts/fontawesome-webfont.svg
+      - ../node_modules/font-awesome/fonts/fontawesome-webfont.ttf
+      - ../node_modules/font-awesome/fonts/fontawesome-webfont.woff
+      - ../node_modules/font-awesome/fonts/fontawesome-webfont.woff2
 ```
