@@ -192,7 +192,7 @@ Registering a `delivery part` is necessary in order to use it in the delivery ar
 
 ### Delivery Part Registration
 
-Inside a `deliveryPart.yaml` the `register` attribute allows the specification of any alias name. That name should be unique in the delivery creation process. Within the defined alias name we can specify the connected `JS` and `CSS` files. Files are defined as a collection using the `-` in the yaml.
+Inside a `deliveryPart.yaml` the `register` attribute allows the specification of any alias name. That name should be unique in the delivery creation process. Within the defined alias name we can specify the connected `JS`, `CSS`  and `MARKUP` files. Files are defined as a collection using the `-` in the yaml.
 
 The `CSS` files can be simple strings or an object with `name` and `ASSETS` attribute. The `ASSETS` should be a list of assets used within the CSS file. Those assets will be copied to a folder equal to the registered alias name within the given asset output folder.  
 
