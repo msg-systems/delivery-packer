@@ -2,7 +2,7 @@
     "name":        "delivery-packer",
     "homepage":    "https://github.com/msg-systems/delivery-packer",
     "description": "JavaScript lightweight delivery artifact creator",
-    "version":     "0.1.7",
+    "version":     "0.1.8",
     "license":     "MIT",
     "author": {
         "name":    "Jochen Hoertreiter",
